@@ -1,0 +1,57 @@
+using System;
+
+namespace JohnCSLO1Asmt
+{					
+     class Program
+     {
+	    static void Main(string[] args)
+		{
+		//Console.WriteLine();	 
+		//Console.ReadLine("");
+		}
+		 static void MenuSelect()
+		 {
+			 Console.WriteLine("Function Selection Program");
+			 Console.WriteLine("");	
+			 Console.WriteLine("Please Enter An Option Number");
+			 Console.WriteLine("");
+			 Console.WriteLine("Option 1 Generate Username");
+			 Console.WriteLine("Option 2 Calculate Factorial");
+			 Console.WriteLine("Option 3 Exit The Program");	
+			 
+			 
+			 string options;
+			 options = Console.ReadLine();
+			  switch (options)
+			  {
+				  case "1":
+					  GenerateUsername();
+					  break;
+					  
+				 case "2":
+					  CalculateFactorial();
+					  break;
+					  
+				 case "3":
+					  ExitProgram();
+					  break;
+					 
+			  }
+			 
+		   MenuSelect(); 
+		 
+		 }
+		 static void GenerateUsername()
+		 {
+		 Console.WriteLine("A Username Is Generated");
+		 }
+		 static void CalculateFactorial()
+		 {
+		 Console.WriteLine("A Factorial Is Calculated");
+		 }
+		 static void ExitProgram()
+		 {
+		 Console.WriteLine("Exits The Program");
+		 }
+	 }
+}
