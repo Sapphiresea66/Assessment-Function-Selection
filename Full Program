@@ -1,0 +1,107 @@
+using System;  // Importing necessary namespace
+
+namespace JohnCSLO1AsmtFIN03  // Defines unique namespace for JOHN ORD 17003445 H17334 LO1 
+{					
+     class Program  // Declaration of the Program class
+     {
+	    static void Main(string[] args) // Main method, entry point of the program
+		{
+			OptionSelect();
+		}
+		 static void OptionSelect()
+		 {
+			 Console.WriteLine("");	 // Blank Line
+			 Console.WriteLine("Function Selection Program");
+			 Console.WriteLine("");	 // Blank Line
+			 Console.WriteLine("Please Enter An Option Number");
+			 Console.WriteLine("");   // Blank Line
+			 Console.WriteLine("Option 1 Generate Username");
+			 Console.WriteLine("Option 2 Calculate Factorial");
+			 Console.WriteLine("Option 3 Exit The Program");	
+			 
+			 string options;
+			 
+			 options = Console.ReadLine();
+			 switch (options)  // Switch Function
+			    {
+				  case "1":
+					  GenerateUsername(); // Calls "GenerateUsername" Function
+					  OptionSelect(); // Runs option menu again 
+					  break;
+					  
+				 case "2":
+					  CalculateFactorial(); // Calls "CalculateFactorial" Function
+					  OptionSelect(); // Runs option menu again 
+					  break;
+					  
+				 case "3":
+					  ExitProgram(); // Calls "ExitProgram" Function
+					  break;
+				
+				  default:             // When an invalid option is entered
+					  Console.WriteLine("");  // Blank Line	
+					  Console.WriteLine("Invalid Option Number"); // Informs user when an invalid option is selected
+					  Console.WriteLine("");   // Blank Line	
+					  OptionSelect(); // Runs option menu again 
+					break;	          // Resets and eturns to option menu start 
+			     }
+		 }
+		 static void GenerateUsername()
+		 {
+		   Console.Write ("Please enter forename: "); // Request user forename
+		   string forename = Console.ReadLine ();
+		         {
+			      Console.WriteLine(forename[0]);// Returns Initial	
+		         }
+			 
+		   Console.Write ("Please enter surname: "); //Requests Surname From User
+ 		   string surname = Console.ReadLine ( );
+		   
+		   Console.WriteLine(surname.ToUpper()); // Prints Surname CAPITALISED 
+	
+		   Console.Write("Username: " ) ; // prints Username to console
+		
+		   forename = forename.ToLower(); // Converts forename to lowercase
+		   char first_character = forename[0]; // returns first chracter of forename
+		
+		   surname = surname.ToUpper();// convets surname to upper case
+		
+		   Console.WriteLine(AddUsername(first_character, surname)); //generates username
+		 }
+		 
+		 static string AddUsername (char forename, string surname)
+		 {
+		 		return forename + surname; // Returns Username
+		 }
+		 
+		   static void CalculateFactorial()   // Calculate Factorial Function
+		 
+		   {
+		     int number, factorial = 1; // Asigning factorial number
+		
+		     Console.WriteLine("Please enter a number"); // Requests number from user
+		     number = Convert.ToInt32(Console.ReadLine()); // Reads User Input And Converts To Integer 
+		
+		    if (number < 0);
+		
+		    else if ( number <= 1)
+			Console.WriteLine("{0} = {1}",number, factorial);
+		    
+			   else {
+			          for (int counter = number; counter >= 2; counter -- ) // recursion factor
+			          {
+				        factorial = factorial * counter; // Calculates Factorial using recursion 
+			          }
+			
+			         Console.WriteLine("{0} = {1}",number, factorial); // Formats factorial result and prints to console
+			        }
+		     }
+		      static void ExitProgram()  // Executes "Exit Program" Function
+		     {
+		       Console.WriteLine("Are You Sure?");  // Exit Dialogue 1 prompts user to confirm exit
+	           Console.WriteLine(""); // Blank Line	
+		       Console.WriteLine("Press ENTER To Exit");  // Exit Dialogue 2 if confirmed, prompts user to press ENTER 
+		       Console.ReadLine(); // Blank Line	
+		       System.Environment.Exit(1); // Exit program
+		     }
+	  }
