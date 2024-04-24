@@ -1,0 +1,40 @@
+using System;
+
+namespace JohnCSLO1Asmt01;
+					
+public class Program
+{
+	public static void Main(string[] args)
+	{
+	   while(true)
+	   {
+		 GenerateUserName();
+		 break;  
+	   }
+		
+	   }
+	    public static void GenerateUserName()
+	   {
+		Console.Write ("Please enter forename: ");// Request user forename
+		string forename = Console.ReadLine ();
+		{
+		         
+		Console.WriteLine(forename[0]);// returns initial
+					
+		}
+		Console.Write ("Please enter surname: "); //Request user surname
+		string surname = Console.ReadLine ( );
+		
+		Console.WriteLine(surname.ToUpper()); // returns surname capitalised 
+	
+		Console.Write("Username: " ) ; // returns username
+		
+		forename = forename.ToLower(); //converts forename to lower
+		char first_character = forename[0]; // returns first chracter of forename
+		
+		surname = surname.ToUpper();// convets surname to upper
+		
+		Console.WriteLine(first_character + surname); //generates username
+	   }
+}
+
